@@ -3,7 +3,7 @@ var path=require("path");
 var bodyParser=require("./node_modules/body-parser");
 var data=require("./public/data.json");
 var indexRouter=require("./routes/index");
-var cors=require("./node_modules/cors");
+
 
 var port=process.env.PORT || 5050;
 var app = express();

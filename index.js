@@ -4,7 +4,6 @@ const matchesPlayedPerYear = require("./ipl/matchesPlayedPerYear");
 const matchesWonByEachTeam = require("./ipl/matchesWonByEachTeam");
 const extraRunConcededByEachTeam2016 = require("./ipl/extraRunConcededByEachTeam2016");
 const topTenEconomicBowlers2015 = require("./ipl/topTenEconomicBowlers2015");
-const topTenEconomicBowlersEveryYear = require("./ipl/topTenEconomicBowlersEveryYear");
 const centuriesOfBatsmans2019 = require("./ipl/centuriesOfBatsmans2019");
 
 const MATCHES_FILE_PATH = "./csv_data/matches.csv";
@@ -23,7 +22,6 @@ function main() {
           result.matchesWonByEachTeam = matchesWonByEachTeam(matches);
           result.extraRunConcededByEachTeam2016 = extraRunConcededByEachTeam2016(matches, deliveries);
           result.topTenEconomicBowlers2015 = topTenEconomicBowlers2015(matches, deliveries);
-          result.topTenEconomicBowlersEveryYear=topTenEconomicBowlersEveryYear(matches,deliveries);
           result.centuriesOfBatsmans2019 = centuriesOfBatsmans2019(matches, deliveries)
           saveData(result);
         });

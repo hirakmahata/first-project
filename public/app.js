@@ -185,40 +185,6 @@ function visualizeTopTenEconomicBowlers2015(topTenEconomicBowlers2015) {
   });
 }
 
-function visualizeTopTenEconomicBowlersEveryYear(topTenEconomicBowlersEveryYear,year) {
-  const seriesData = [];
-  for (let team in topTenEconomicBowlersEveryYear) {
-    seriesData.push([team, topTenEconomicBowlersEveryYear[team]]);
-  }
-  Highcharts.chart("top-Ten-Economic-Bowlers-Every-Year", {
-    chart: {
-      type: "column"
-    },
-    title: {
-      text: "top Ten Economic Bowlers In" +year
-    },
-    subtitle: {
-      text:
-        'Source: <a href="https://www.kaggle.com/nowke9/ipldata/data">IPL Dataset</a>'
-    },
-    xAxis: {
-      type: "category"
-    },
-    yAxis: {
-      min: 0,
-      title: {
-        text: "Economy"
-      }
-    },
-    series: [
-      {
-        name: "Bowler",
-        data: seriesData
-      }
-    ]
-  });
-}
-
 function visualizeCenturiesOfBatsmans2019(centuriesOfBatsmans2019) {
   const seriesData = [];
   for (let num in centuriesOfBatsmans2019) {
@@ -252,17 +218,4 @@ function visualizeCenturiesOfBatsmans2019(centuriesOfBatsmans2019) {
       }
     ]
   });
-}
-
-function showEconomicBowler(){
-  let season =document.getElementById("bowler_season").value;
-  if(season==0){
-    alert("Please select a season");
-  }else{
-    fetch("/economy?year="+season)
-    .then((response)=>response.json())
-    .then((json)=>{
-      visualizeTopTenEconomicBowlersEveryYear(json,season);
-    });
-  }
 }
